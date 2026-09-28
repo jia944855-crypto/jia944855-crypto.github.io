@@ -1,0 +1,185 @@
+
+/* signle slider slick buttons out of media queries */
+.single-slider .slick-dots li {
+    width: 50px; /* 5rem * 10 = 50px */
+    height: 8px; /* 0.8rem * 10 = 8px */
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.single-slider .slick-dots li button {
+    width: 50px; /* 5rem * 10 = 50px */
+    height: 8px; /* 0.8rem * 10 = 8px */
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.single-slider .slick-dots li button:before {
+    content: "";
+    background: #B5D9F5;
+    width: 100%;
+    position: absolute;
+    top: 3px; /* 0.3rem * 10 = 3px */
+    left: 0;
+    height: 6px; /* 0.2rem * 10 = 2px */
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transition: background 0.2s ease-in-out;
+}
+.single-slider .slick-dots li:first-child button:before{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.single-slider .slick-dots li:last-child button:before{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.single-slider .slick-dots li.slick-active button:before {
+    border-radius: 5px;
+    opacity: 1;
+    background: #3B8CCB;
+}
+
+
+/* signle slider out of media queries */
+.single-slider-title-wrapper{
+    color: var(--e-global-color-text);
+    font-family: "STIX Two Text", Sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 55px;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+}
+
+.single-slider-title-wrapper span{
+    font-style: italic;
+}
+.single-slider-wrapper{
+    transition: opacity 0.8s ease-in-out;
+}
+
+.single-slider-wrapper.opacity-1{
+    opacity: 1 !important;
+}
+
+.single-slider .single-slide{
+    display: flex;
+    width: 100%;
+    height: 779px; /* Set height as needed */
+    overflow: hidden;
+    margin:40px;
+}
+.single-slider .single-slide .left-div{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 100px;
+    padding-top: 150px;
+}
+.single-slider .single-slide .left-div .left-div-inner-wrapper{
+    border-left: 2px solid #3B8CCB;
+    padding: 60px 60px 120px;
+}
+.single-slider .single-slide .left-div .left-div-inner-wrapper span{
+    color: #3B8CCB;
+    font-size: 36px;
+    font-weight: 200;
+}
+.single-slider .single-slide .left-div .left-div-inner-wrapper h3{
+    color: #3B8CCB;
+    font-family: "Proxima Nova", Sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom:30px;
+}
+.single-slider .single-slide .left-div .left-div-inner-wrapper p{
+    color: #313131;
+    font-family: "Proxima Nova", Sans-serif;
+    font-size: 16px;
+    /* font-size: 24px; */
+    line-height: 1.5;
+    /* line-height: 30px; */
+}
+.single-slider .single-slide .right-div{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.single-slider .single-slide .right-div img{
+    width:617px;
+    height: 779px;
+    object-fit:cover;
+    /* padding:30px; */
+}
+
+@media screen and (max-width: 1150px) {
+    .single-slider .single-slide .left-div{
+        padding-right:10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .single-slider .single-slide {
+        flex-direction: column;
+    }
+    .single-slider .single-slide .left-div {
+        width: 100%;
+    }
+    .single-slider .single-slide .right-div {
+        width: 100%;
+    }
+    .single-slider .single-slide .right-div img{
+        width: 100%;
+    }
+    .single-slider .single-slide .left-div .left-div-inner-wrapper {
+        margin: 0px 0px 40px;
+        padding: 33px;
+    }
+    .single-slider .single-slide{
+        height:auto;
+    }
+    .single-slider .single-slide .right-div img{
+        height:500px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .single-slider-title-wrapper{
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .single-slider .single-slide .left-div .left-div-inner-wrapper p{
+        font-size:15px;
+        line-height: 20px;
+    }
+    .single-slider .single-slide .left-div .left-div-inner-wrapper span,
+    .single-slider .single-slide .left-div .left-div-inner-wrapper h3{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .single-slider .single-slide .left-div {
+        padding-top: 90px;
+        padding-right: 0px;
+    }
+    .single-slider .single-slide{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

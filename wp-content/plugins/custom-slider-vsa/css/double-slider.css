@@ -1,0 +1,175 @@
+
+
+
+/* double slider slick buttons out of media queries */
+.double-slider-mobile .slick-dots li,
+.double-slider .slick-dots li {
+    width: 50px; /* 5rem * 10 = 50px */
+    height: 8px; /* 0.8rem * 10 = 8px */
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.double-slider-mobile .slick-dots li button,
+.double-slider .slick-dots li button {
+    width: 50px; /* 5rem * 10 = 50px */
+    height: 8px; /* 0.8rem * 10 = 8px */
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.double-slider-mobile  .slick-dots li button:before,
+.double-slider .slick-dots li button:before {
+    content: "";
+    background: #B5D9F5;
+    width: 100%;
+    position: absolute;
+    top: 3px; /* 0.3rem * 10 = 3px */
+    left: 0;
+    height: 6px; /* 0.2rem * 10 = 2px */
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transition: background 0.2s ease-in-out;
+}
+.double-slider-mobile .slick-dots li.slick-active button:before,
+.double-slider .slick-dots li.slick-active button:before {
+    opacity: 1;
+    background: #3B8CCB;
+}
+
+.double-slider-mobile .slick-dots li:first-child button:before,
+.double-slider .slick-dots li:first-child button:before{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.double-slider-mobile .slick-dots li:last-child button:before,
+.double-slider .slick-dots li:last-child button:before{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.double-slider-mobile .slick-dots li.slick-active button:before,
+.double-slider .slick-dots li.slick-active button:before {
+    border-radius: 5px;
+    opacity: 1;
+    background: #3B8CCB;
+}
+
+/* double slider & mobile*/
+
+.double-slider {
+    display: none;
+}
+.double-slider-mobile {
+    /* opacity:0; moved inline because this code is loaded in footer */
+    transition: opacity 0.8s ease-in-out;
+}
+.double-slider-mobile.opacity-1{
+    opacity: 1 !important;
+}
+
+
+
+
+.double-slider-mobile .slick-slide{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .double-slider-mobile .slick-slide {
+        margin-right: 30px;
+    }
+    
+    /* double slider */
+    .double-slider {
+        position: relative;
+        margin-top: 78px; /* 7.8rem * 10 = 78px */
+        display: block;
+        flex-wrap: wrap;
+        z-index: 1;
+        padding-bottom: 60px; /* 6rem * 10 = 60px */
+        transition: opacity 0.8s ease-in-out;
+    }
+    .double-slider.opacity-1{
+        opacity: 1 !important;
+    }
+    .double-slider .slick-slide {
+        margin-left: 56px; /* 5.6rem * 10 = 56px */
+    }
+    .double-slider .double-slide {
+        display: flex !important;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    .double-slider .double-slide img {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    /* left small image */
+    .double-slider .double-slide.small-left img:first-child {
+        width: 30%;
+        position: relative;
+        margin-top: 120px; /* 12rem * 10 = 120px */
+    }
+    .double-slider .double-slide.small-left img+img {
+        margin-top: 0;
+        width: 70%;
+        padding-left: 56px; /* 5.6rem * 10 = 56px */
+    }
+
+    /* right small image */
+    .double-slider .double-slide.small-right img:first-child {
+        margin-top: 0;
+        width: 70%;
+        padding-right: 56px; /* 5.6rem * 10 = 56px */
+    }
+    .double-slider .double-slide.small-right img+img {
+        width: 30%;
+        position: relative;
+        align-self: center;
+    }
+
+
+
+    /* effects */
+    .double-slider .double-slide img:first-child {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: transform 0.5s ease-in-out 0.1s, opacity 0.6s ease-in-out 0.1s;
+    }
+    .double-slider .double-slide img:nth-child(2) {
+        opacity: 0;
+        transform: translateY(2px);
+        transition: transform 0.5s ease-in-out 0.1s, opacity 0.6s ease-in-out 0.1s;
+    }
+
+    .double-slider .double-slide img.in-view{
+        transform: none;
+        opacity: 1;
+    }
+
+
+
+    /* double slider mobile */
+    .double-slider-mobile {
+        display: none;
+    }
+
+
+
+}
+

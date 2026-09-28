@@ -1,0 +1,16 @@
+
+.jet-listing-grid__slider .jet-listing-grid__item.slick-slide{
+    padding-top:130px;
+    padding-bottom:130px;
+}
+
+.jet-listing-grid__slider .jet-listing-grid__item.jet-listing-dynamic-post-243.slick-slide.slick-active{
+    transform: scale(1.1);
+    z-index: 1111111;
+    position:relative;
+
+}
+.jet-listing-grid__slider .jet-listing-grid__item.jet-listing-dynamic-post-243.slick-slide.slick-active .elementor-element{
+    background-color:#DCF1FF;
+    
+}

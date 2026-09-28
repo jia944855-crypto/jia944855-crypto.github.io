@@ -1,2 +1,21 @@
 .DS_Store
 .claude/
+
+# Local runtime/dependency files
+node_modules
+**/__pycache__/
+*.py[cod]
+
+# Local inspection and translation-workbook outputs
+inspect_output/
+outputs/
+
+# Local migration backups (the deployable site uses the files at project root)
+route-migration-backup-*/
+*-backup.html
+index-approx-backup.html
+
+# Editor and local environment files
+.env
+.env.*
+!.env.example
